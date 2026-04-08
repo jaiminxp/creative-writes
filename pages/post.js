@@ -38,7 +38,8 @@ export default function Post() {
             timestamp: serverTimestamp(),
             user: user.uid,
             avatar: user.photoURL,
-            username: user.displayName
+            username: user.displayName,
+            description: post.description,
         })
         setPost({ description: ""})
         return route.push('/')
