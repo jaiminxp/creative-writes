@@ -18,8 +18,28 @@ body {
 }
 
 @layer utils {
+    .btn {
+        @apply py-2 px-4 text-sm rounded-lg font-medium flex items-center justify-center gap-2;
+    }
+
+    .btn:hover {
+        @apply cursor-pointer;
+    }
+
     .btn-primary {
-        @apply py-2 px-4 text-sm bg-cyan-500 text-white rounded-lg font-medium;
+        @apply py-2 px-4 text-sm rounded-lg font-medium bg-cyan-500 text-white;
+    }
+
+    .btn-primary:hover {
+        @apply cursor-pointer;
+    }
+
+    .btn-danger {
+        @apply bg-pink-500;
+    }
+
+    .btn-secondary {
+        @apply bg-slate-500 text-white;
     }
 }
 
