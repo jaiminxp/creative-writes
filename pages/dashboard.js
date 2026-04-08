@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import Message from "@/components/message";
 import { BsTrash2Fill } from 'react-icons/bs'
 import { AiFillEdit } from "react-icons/ai";
+import Link from "next/link";
 
 export default function Dashboard() {
     const route = useRouter()
@@ -46,7 +47,9 @@ export default function Dashboard() {
                         >
                             <BsTrash2Fill className="text-2xl" /> Delete
                         </button>
-                        <button className="btn btn-secondary"><AiFillEdit className="text-2xl" /> Edit</button>
+                        <Link href={{pathname: "/post", query: post}}>
+                            <button className="btn btn-secondary"><AiFillEdit className="text-2xl" /> Edit</button>
+                        </Link>
                     </div>
                 </Message>))}
             </div>
