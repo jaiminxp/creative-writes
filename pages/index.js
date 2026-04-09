@@ -2,6 +2,7 @@ import Message from "@/components/message";
 import {useEffect, useState} from "react";
 import {db} from "@/utils/firebase";
 import {collection, orderBy, query, onSnapshot} from "firebase/firestore";
+import Link from "next/link";
 
 export default function Home() {
     const [allPosts, setAllPosts] = useState([]);
@@ -21,6 +22,10 @@ export default function Home() {
 
     return <div className="my-12 text-lg font-medium">
         <h2>See what other people are saying</h2>
-        {allPosts.map((post) => <Message {...post} key={post.id} />)}
+        {allPosts.map((post) => <Message {...post} key={post.id} >
+            <Link href={{ pathname: `/${post.id}`, query: { ...post }}}>
+                <button>comments</button>
+            </Link>
+        </Message>)}
     </div>;
 }
