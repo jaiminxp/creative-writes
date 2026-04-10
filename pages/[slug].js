@@ -64,7 +64,7 @@ export default function Details() {
             </div>
             <div className="my-6">
                 <h2 className="font-bold">Comments</h2>
-                {allComments.map((c) => (<div className="bg-white p-4 my-4 border-2" key={c.time}>
+                {allComments?.map((c) => (<div className="bg-white p-4 my-4 border-2" key={c.time}>
                     <div className="flex items-center gap-2 mb-4">
                         <img src={c.avatar} alt="avatar" className="w-10 rounded-full" />
                         <h2>{c.userName}</h2>    

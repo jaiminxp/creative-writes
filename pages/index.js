@@ -24,7 +24,7 @@ export default function Home() {
         <h2>See what other people are saying</h2>
         {allPosts.map((post) => <Message {...post} key={post.id} >
             <Link href={{ pathname: `/${post.id}`, query: { ...post }}}>
-                <button className="btn btn-secondary">comments</button>
+                <button className="btn btn-secondary">{ post.comments?.length || 0 } comments</button>
             </Link>
         </Message>)}
     </div>;
